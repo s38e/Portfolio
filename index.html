@@ -40,10 +40,40 @@
               <a href="#contact" class="nav-link">Contact</a>
             </li>
           </ul>
-          <i class="uil uil-moon toggle-btn"></i>
+          <!-- <i class="uil uil-moon toggle-btn"></i> -->
+          <div class="menu-button">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+          </div>
         </div>
       </nav>
     </header>
+
+    <!-- --------- Navigation --------- -->
+
+    <div class="nav">
+      <div class="nav__content">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a href="#home" class="hover-target">home</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#about" class="hover-target">about</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#services" class="hover-target">services</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#portfolio" class="hover-target">portfolio</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#contact" class="hover-target">contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- --------- Navigation --------- -->
 
     <main>
       <section class="showcase-area" id="home">
@@ -77,20 +107,20 @@
         <div class="container">
           <div class="about-grid">
             <div class="about-card">
-              <img class="icon" src="./assets/images/animation.png" alt="" />
-              <h3>Text here</h3>
+              <img class="icon" src="./assets/images/develope.svg" alt="" />
+              <h3>Responsive</h3>
             </div>
             <div class="about-card">
-              <img class="icon" src="./assets/images/coding.png" alt="" />
-              <h3>Text here</h3>
+              <img class="icon" src="./assets/images/coding.svg" alt="" />
+              <h3>Clean Code</h3>
             </div>
             <div class="about-card">
-              <img class="icon" src="./assets/images/coding.png" alt="" />
-              <h3>Text here</h3>
+              <img class="icon" src="./assets/images/logo.svg" alt="" />
+              <h3>Creative</h3>
             </div>
             <div class="about-card">
-              <img class="icon" src="./assets/images/animation.png" alt="" />
-              <h3>Text here</h3>
+              <img class="icon" src="./assets/images/animation.svg" alt="" />
+              <h3>Animations</h3>
             </div>
           </div>
           <div class="about-info">
@@ -261,7 +291,7 @@
               <div class="images">
                 <img src="./assets/images/card images/card-img-01.png" />
                 <img src="./assets/images/card images/card-img-02.png" />
-                <img src="./assets/images/card images/card-img-03.png" />
+                <img src="./assets/images/card images/card-img-07.jpg" />
                 <img src="./assets/images/card images/card-img-04.jpeg" />
                 <img src="./assets/images/card images/card-img-05.png" />
                 <img src="./assets/images/card images/card-img-06.jpeg" />
@@ -280,10 +310,11 @@
             </div>
             <div class="filter-btns">
               <button class="filter-btn" data-filter="all">All</button
-              ><button class="filter-btn" data-filter=".product">Product</button
-              ><button class="filter-btn" data-filter=".inter">
-                Interacting</button
+              ><button class="filter-btn" data-filter=".logo">Logo</button
               ><button class="filter-btn" data-filter=".web">Web App</button>
+              <button class="filter-btn" data-filter=".ui-design">
+                Ui Design
+              </button>
             </div>
           </div>
           <div class="portfolio-gallery">
@@ -304,7 +335,7 @@
                 <a href="" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-            <div class="mix prt-card inter">
+            <div class="mix prt-card ui-design">
               <div class="prt-image">
                 <img src="./assets/images/card images/card-img-02.png" />
                 <div class="prt-overlay">
@@ -323,7 +354,7 @@
             </div>
             <div class="mix prt-card web">
               <div class="prt-image">
-                <img src="./assets/images/card images/card-img-03.png" alt="" />
+                <img src="./assets/images/card images/card-img-07.jpg" alt="" />
                 <div class="prt-overlay">
                   <span class="prt-icon zoom-icon" style="--i: 0s">
                     <i class="uil uil-search-plus"></i>
@@ -334,11 +365,11 @@
                 </div>
               </div>
               <div class="prt-desc">
-                <h3>Usce Tower One</h3>
+                <h3>Four - Branding Agency</h3>
                 <a href="" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-            <div class="mix prt-card web">
+            <div class="mix prt-card logo">
               <div class="prt-image">
                 <img src="./assets/images/card images/card-img-04.jpeg" />
                 <div class="prt-overlay">
@@ -355,7 +386,7 @@
                 <a href="" class="btn secondary-btn sm">Read more</a>
               </div>
             </div>
-            <div class="mix prt-card web">
+            <div class="mix prt-card ui-design">
               <div class="prt-image">
                 <img src="./assets/images/card images/card-img-05.png" />
                 <div class="prt-overlay">
@@ -414,7 +445,10 @@
                   <img src="./assets/images/fourlogoweb-black-2.svg" alt="" />
                   <div class="client-info">
                     <h4>Four</h4>
-                    <h5>Branding Agency <a href="@">@4branding</a></h5>
+                    <h5>
+                      Branding Agency
+                      <a href="https://s38e.github.io/Four">@4branding</a>
+                    </h5>
                   </div>
                 </div>
                 <q class="text">
@@ -520,6 +554,11 @@
         </ul>
       </div>
     </footer>
+
+    <!-- --------- Cursor Circle --------- -->
+
+    <div class="cursor-circle"></div>
+
     <!-- --------- JS Files --------- -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

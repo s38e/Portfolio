@@ -17,6 +17,10 @@ const next_btn = document.querySelector(".next-btn");
 
 const links = document.querySelectorAll(".nav-link");
 
+const circle = document.querySelector(".cursor-circle");
+
+menuItems = document.querySelectorAll(".nav__list-item");
+
 window.addEventListener("scroll", () => {
   activeLink();
   if (!skillsPlayed) skillsCounter();
@@ -216,6 +220,78 @@ function activeLink() {
 
   links.forEach((l) => l.classList.remove("active"));
   links[currSectionId].classList.add("active");
+  //
+  menuItems.forEach((l) => l.classList.remove("active-nav"));
+  menuItems[currSectionId].classList.add("active-nav");
 }
 
 activeLink();
+
+// --------- Cursor Circle --------- //
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function updateCirclePosition() {
+  const targetX = mouseX - circle.offsetWidth / 2;
+  const targetY = mouseY - circle.offsetHeight / 2;
+
+  const dx = (targetX - parseInt(circle.style.left || 0)) * 0.2;
+  const dy = (targetY - parseInt(circle.style.top || 0)) * 0.2;
+
+  circle.style.left = parseInt(circle.style.left || 0) + dx + "px";
+  circle.style.top = parseInt(circle.style.top || 0) + dy + "px";
+
+  requestAnimationFrame(updateCirclePosition);
+}
+
+updateCirclePosition();
+
+const hoverElements = document.querySelectorAll(
+  ".btn, .nav-link, .toggle-btn, .client-info h5 a, .mail, .menu-button, .nav__list-item a, .social-link, .filter-btn, .prt-image img, .prt-overlay, .logo"
+);
+
+hoverElements.forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    circle.style.width = "60px";
+    circle.style.height = "60px";
+  });
+
+  element.addEventListener("mouseleave", () => {
+    circle.style.width = "10px";
+    circle.style.height = "10px";
+  });
+});
+
+// --------- Navigation --------- //
+
+function navigation() {
+  var body = undefined;
+  var menu = undefined;
+  var menuItems = undefined;
+  var init = function init() {
+    body = document.querySelector("body");
+    menu = document.querySelector(".menu-button");
+    menuItems = document.querySelectorAll(".nav__list-item");
+    applyListeners();
+  };
+  var applyListeners = function applyListeners() {
+    menu.addEventListener("click", function () {
+      menu.classList.toggle("change");
+      return toggleClass(body, "nav-active");
+    });
+  };
+  var toggleClass = function toggleClass(element, stringClass) {
+    if (element.classList.contains(stringClass))
+      element.classList.remove(stringClass);
+    else element.classList.add(stringClass);
+  };
+  init();
+}
+
+navigation();
